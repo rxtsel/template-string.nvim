@@ -6,7 +6,7 @@
 
 - Wrap template literals with `{``}` when inside JSX/TSX components.
 - Revert template literals to their original form when necessary.
-- Configurable options to enable/disable wrapping with `{``}`.
+- Integration with [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter): The plugin now utilizes nvim-treesitter to accurately detect and manipulate JSX/TSX nodes, enhancing its functionality and precision.
 
 ## Supported Languages
 
