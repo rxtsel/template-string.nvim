@@ -25,10 +25,8 @@ Install using your favorite package manager for Neovim. For example, using [lazy
     event = "BufReadPost",
     dependencies = {
         "nvim-lua/plenary.nvim",
-    },
-    config = function()
-        require("template-string").setup()
-    end,
+        "nvim-treesitter/nvim-treesitter",
+    }
 }
 ```
 
@@ -51,19 +49,6 @@ const props = {
 };
 
 <Test greeting={`Hello, ${props.name}!`} />;
-```
-
-## Configuration
-
-The `setup` function accepts an optional configuration object with the following options:
-
-- **jsx_brackets** `boolean | nil`: Enable/disable wrapping template literals with `{``}` inside JSX/TSX components. Defaults to `true` if not provided.
-
-```lua
--- Default configuration
-require('template-string').setup({
-    jsx_brackets = true, -- Wrap template literals with {``} inside JSX/TSX components
-})
 ```
 
 ## License
