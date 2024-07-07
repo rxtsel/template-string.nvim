@@ -4,9 +4,10 @@
 
 ## Features
 
-- Wrap template literals with `{``}` when inside JSX/TSX components.
-- Revert template literals to their original form when necessary.
-- Integration with [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter): The plugin now utilizes nvim-treesitter to accurately detect and manipulate JSX/TSX nodes, enhancing its functionality and precision.
+- Automatically wraps template literals with backticks ``` `` ``` when a `${}` expression is added within single or double quotes in JavaScript or TypeScript files.
+- Wraps template literals with `{``}` when inside JSX/TSX components.
+- Reverts template literals to their original form when the `${}` expression is removed.
+- Integration with [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) for accurate detection and manipulation of JSX/TSX nodes, enhancing its functionality and precision.
 
 ## Supported Languages
 
@@ -32,16 +33,17 @@ Install using your favorite package manager for Neovim. For example, using [lazy
 
 ## Usage
 
-Once installed, the plugin automatically wraps template literals with **``** when editing JavaScript or TypeScript files. To use template literals, simply enclose your JavaScript or TypeScript expressions in `${}`. For example:
+Once installed, the plugin automatically wraps template literals with backticks `` `...` `` when a `${}` expression is added within single or double quotes in JavaScript or TypeScript files. For example, changing `"Hello, ${name}"` to `` `Hello, ${name}` ``. In JSX/TSX, it wraps with `{``}`.
+
+### JavaScript/TypeScript
 
 ```javascript
-// Javascript/TypeScript
 const name = "World";
 const greeting = `Hello, ${name}!`;
 console.log(greeting);
 ```
 
-On JSX/TSX components, the plugin will wrap template literals with `{``}`. For example:
+### JSX/TSX
 
 ```jsx
 const props = {
